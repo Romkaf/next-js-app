@@ -6,4 +6,4 @@ const Users = () => (
     </>
 );
 
-export default CUsers;
+export default Users;

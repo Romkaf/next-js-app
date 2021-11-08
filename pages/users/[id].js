@@ -3,7 +3,7 @@ import UserInfo from "../../components/UserInfo";
 //use SSR
 export const getServerSideProps = async (ctx) => {
   const { id } = ctx.params;
-  const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+  const res = await fetch(`${process.env.API_HOST}/users/${id}`);
   const data = await res.json();
 
   if (!data) {

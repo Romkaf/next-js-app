@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "../../styles/list.module.scss";
 
 export const getStaticProps = async () => {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/users`);
+  const res = await fetch(`${process.env.API_HOST}/users`);
   const data = await res.json();
 
   if (!data) {

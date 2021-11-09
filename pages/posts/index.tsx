@@ -15,9 +15,9 @@ const Posts: FC<IPostProps> = ({ posts }) => (
     <ul className={styles.list}>
       {posts &&
         posts.map(({ id, title }) => (
-          <li className={styles.list_item} key={id}>
+          <li className={styles.item} key={id}>
             <Link href={`/posts/${id}`}>
-              <a className={styles.list_link}>{title}</a>
+              <a className={styles.link}>{title}</a>
             </Link>
           </li>
         ))}

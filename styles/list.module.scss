@@ -3,15 +3,15 @@
     padding: 0;
     list-style: none;
 
-    &_item {
+    .item {
         border-radius: 20px;
     }
 
-    &_item:nth-child(odd) {
+    .item:nth-child(odd) {
         background: aquamarine;
     }
 
-    &_link {
+    .link {
         display: block;
         padding: 8px;
         margin-bottom: 10px;

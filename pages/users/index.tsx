@@ -16,9 +16,9 @@ const Users: FC<IUsersProps> = ({ users }) => (
     <ul className={styles.list}>
       {users &&
         users.map(({ id, name }) => (
-          <li className={styles.list_item} key={id}>
+          <li className={styles.item} key={id}>
             <Link href={`users/${id}`}>
-              <a className={styles.list_link}>{name}</a>
+              <a className={styles.link}>{name}</a>
             </Link>
           </li>
         ))}

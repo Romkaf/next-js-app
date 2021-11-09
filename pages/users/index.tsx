@@ -2,23 +2,15 @@ import Heading from "../../components/Heading";
 import Layout from "../../components/Layout";
 import Link from "next/link";
 import styles from "../../styles/list.module.scss";
+import { GetStaticProps } from "next";
+import { FC } from "react";
+import { IUser } from "../../interfaces/User";
 
-export const getStaticProps = async () => {
-  const res = await fetch(`${process.env.API_HOST}/users`);
-  const data = await res.json();
+interface IUsersProps {
+  users: IUser[];
+}
 
-  if (!data) {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: { users: data },
-  };
-};
-
-const Users = ({ users }) => (
+const Users: FC<IUsersProps> = ({ users }) => (
   <Layout title="Users">
     <Heading text="Users" />
     <ul className={styles.list}>
@@ -33,5 +25,20 @@ const Users = ({ users }) => (
     </ul>
   </Layout>
 );
+
+export const getStaticProps: GetStaticProps = async () => {
+  const res = await fetch(`${process.env.API_HOST}/users`);
+  const data = await res.json();
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { users: data },
+  };
+};
 
 export default Users;

@@ -1,6 +1,12 @@
 import Heading from "./Heading";
+import { FC } from "react";
+import { IPost } from "../interfaces/Post";
 
-const PostInfo = ({ post }) => {
+export interface IPostProps {
+  post: IPost;
+}
+
+const PostInfo: FC<IPostProps> = ({ post }) => {
   const { title, body } = post || {};
 
   if (!post) {
